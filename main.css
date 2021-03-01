@@ -2,3 +2,10 @@
 body { 
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+}
+img{
+    filter:blur(8px)
+}
