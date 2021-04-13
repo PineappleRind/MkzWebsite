@@ -3,18 +3,24 @@
 	font-family: -apple-system, system-ui, BlinkMacSystemFont, Roboto, Oxygen, Arial, Helvetica, sans-serif;
 	color: white;
 	margin: 0;
+	animation: float 3s;
 }
 
 body {
-	background: url('https://bit.ly/3s0SVAt');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
 	height: 100vh;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
+	text-shadow: 0 0 5px black;
+}
+
+img {
+position:fixed;
+top:0;left:0;right:0;bottom:0;
+height:100vh;
+z-index:-1;
+width:100vw;
 }
 
 h1,
@@ -22,39 +28,65 @@ h2 {
 	text-align: center;
 	color: white;
 }
+h2 {
+	font-weight:200;
+}
+h1 {
+	text-shadow: none;
+	font-weight:900;
+	font-size:30px;
+	background: #750ECF;
+background: -webkit-linear-gradient(to right, #750ECF 0%, #CF7419 100%);
+background: -moz-linear-gradient(to right, #750ECF 0%, #CF7419 100%);
+background: linear-gradient(to right, #750ECF 0%, #CF7419 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
 
-img {
-	filter: blur(8px)
+hr {
+	margin:10px;
 }
 
 div {
 	padding: 30px;
-	border-radius: 15px;
-	background: rgba(255, 255, 255, 0.2);
-	backdrop-filter: blur(10px);
+	background: rgba( 255, 255, 255, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 17.0px );
+-webkit-backdrop-filter: blur( 17.0px );
+border-radius: 10px;
+border: 1px solid rgba(255, 255, 255, 0.37);
 	max-width: 500px;
-	animation: float 2s;
+	animation: glass 4s;
 }
 
 button {
-	padding: 12px 18px;
+	padding: 7px 14px;
 	border: 0;
 	outline: 0;
-	transition: 0.5s;
-	border-radius: 99px;
-	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-	border: 2px solid rgb(50, 130, 230);
+	transition: 0.1s;
+	border-radius: 5px;
+	box-shadow: inset 0 3px 5px rgb(0 0 0 / 0%), 0 3px 5px rgb(0 0 0 / 30%);
+	border: 2px solid rgb(255, 255, 255);
 	background: 0;
 }
 
 button:hover {
-	border: 2px solid transparent;
-	background: rgb(50, 130, 230)
+	color: #eee;
+}
+button:active {
+	box-shadow: inset 0 3px 5px rgb(0 0 0 / 30%), 0 3px 5px rgba(0, 0, 0, 0);
+	transform:translateY(1px)
 }
 
 @keyframes float {
-	from {
-		transform: translateY(100px);
+	0% {
 		opacity: 0;
 	}
+	20% {
+		opacity: 0;
+	}
+}
+
+@keyframes glass {
+	from {transform:translateY(-100px)}
 }
